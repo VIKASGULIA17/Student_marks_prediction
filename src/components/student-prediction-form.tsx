@@ -103,17 +103,13 @@ export default function StudentPredictionForm() {
   setResult(null)
 
   try {
-    const response = await fetch('http://localhost:8000/predict', {
+    const response = await fetch('https://student-marks-prediction-backend.onrender.com/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
     })
 
-    const debugResponse = await fetch('http://localhost:8000/debug', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData)
-});
+
 
 
     if (!response.ok) {
